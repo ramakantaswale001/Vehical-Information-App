@@ -29,16 +29,16 @@ const navLinks = [
   //   icon: "ri-settings-2-line",
   //   display: "Login/Register",
   // },
-  // {
-  //   path: "/userregistration",
-  //   icon: "ri-settings-2-line",
-  //   display: "User Registration",
-  // },
-  // {
-  //   path: "/ownerregistration",
-  //   icon: "ri-settings-2-line",
-  //   display: "Owner Registration",
-  // },
+  {
+    path: "/userregistration",
+    icon: "ri-settings-2-line",
+    display: "User Registration",
+  },
+  {
+    path: "/ownerregistration",
+    icon: "ri-settings-2-line",
+    display: "Owner Registration",
+  },
 ];
 
 export default navLinks;

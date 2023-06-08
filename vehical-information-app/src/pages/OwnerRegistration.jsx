@@ -1,33 +1,75 @@
-import React from 'react';
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBCheckbox
-}
-from 'mdb-react-ui-kit';
+import React from "react";
+import "../styles/settings.css";
 
-function UserRegistration() {
+const Settings = () => {
   return (
-    <MDBContainer fluid className='d-flex align-items-center justify-content-center bg-image' style={{backgroundImage: 'url(https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp)'}}>
-      <div className='mask gradient-custom-3'></div>
-      <MDBCard className='m-5' style={{maxWidth: '600px'}}>
-        <MDBCardBody className='px-5'>
-          <h2 className="text-uppercase text-center mb-5">Create an account</h2>
-          <MDBInput wrapperClass='mb-4' label='Your Name' size='lg' id='form1' type='text'/>
-          <MDBInput wrapperClass='mb-4' label='Your Email' size='lg' id='form2' type='email'/>
-          <MDBInput wrapperClass='mb-4' label='Password' size='lg' id='form3' type='password'/>
-          <MDBInput wrapperClass='mb-4' label='Repeat your password' size='lg' id='form4' type='password'/>
-          <div className='d-flex flex-row justify-content-center mb-4'>
-            <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I agree all statements in Terms of service' />
-          </div>
-          <MDBBtn className='mb-4 w-100 gradient-custom-4' size='lg'>Register</MDBBtn>
-        </MDBCardBody>
-      </MDBCard>
-    </MDBContainer>
-  );
-}
+    <div className="settings">
+      <div className="settings__wrapper">
+        <h2 className="settings__title">Owner Registration</h2>
 
-export default UserRegistration;
+        
+
+        <div className="details__form">
+          <h2 className="profile__title">Profile</h2>
+          <p className="profile__desc">
+            Update your photo and personal details here
+          </p>
+          <form>
+            <div className="form__group">
+              <div>
+                <label>Live in</label>
+                <input type="text" placeholder="Sylhet, Bangladesh" />
+              </div>
+
+              <div>
+                <label>Street</label>
+                <input type="text" placeholder="SYL 3108" />
+              </div>
+            </div>
+
+            <div className="form__group">
+              <div>
+                <label>Email</label>
+                <input type="email" placeholder="example@gmail.com" />
+              </div>
+
+              <div>
+                <label>Phone Number</label>
+                <input type="number" placeholder="+880 17*******" />
+              </div>
+            </div>
+
+            <div className="form__group">
+              <div>
+                <label>Date of Birth</label>
+                <input type="date" placeholder="dd/mm/yyyy" />
+              </div>
+
+              <div>
+                <label>Gender</label>
+                <input type="text" placeholder="Male" />
+              </div>
+            </div>
+
+            <div className="form__group">
+              <div>
+                <label>Your Photo</label>
+                <p className="profile-img__desc">
+                  This will be displayed in your profile
+                </p>
+                <input type="file" placeholder="choose file" />
+              </div>
+
+              <div className="profile__img-btns">
+                <button className="dlt__btn">Delete</button>
+                <button className="update__btn">Update</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Settings;

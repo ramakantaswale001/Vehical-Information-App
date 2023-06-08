@@ -23,9 +23,9 @@ const Router = () => {
       <Route path="/sell-car" element={<SellCar />} />
       <Route path="/settings" element={<Registration />} />
       {/* <Route path="/login" element={<Login />} />
-      <Route path="/loginandregister" element={<LoginAndRegister />} />
+      <Route path="/loginandregister" element={<LoginAndRegister />} /> */}
       <Route path="/ownerregistration" element={<OwnerRegistration />} />
-      <Route path="/userregistration" element={<UserRegistration />} /> */}
+      <Route path="/userregistration" element={<UserRegistration />} /> 
     </Routes>
   );
 };
