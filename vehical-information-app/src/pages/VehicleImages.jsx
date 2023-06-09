@@ -8,7 +8,7 @@ const Bookings = () => {
   return (
     <div className="bookings">
       <div className="booking__wrapper">
-        <h2 className="booking__title">Vehicle Details</h2>
+        <h2 className="booking__title">Vehicle Images</h2>
 
         <div className="filter__widget-wrapper">
           <div className="filter__widget-01">

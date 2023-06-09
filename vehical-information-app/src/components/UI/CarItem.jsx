@@ -29,7 +29,7 @@ const CarItem = (props) => {
           </p>
         </div>
 
-        <p className="car__rent">${rentPrice}/d</p>
+        <p className="car__rent">₹{rentPrice}/d</p>
       </div>
     </div>
   );

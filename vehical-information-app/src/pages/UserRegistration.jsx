@@ -10,36 +10,38 @@ const Settings = () => {
             <div className="form__group">
               <div>
                 <label>First Name</label>
-                <input type="text" placeholder="Suresh" />
+                <input type="text" placeholder="please enter your first name" />
               </div>
 
               <div>
                 <label>Last Name</label>
-                <input type="text" placeholder="Jain" />
+                <input type="text" placeholder="please enter your last name" />
               </div>
             </div>
 
             <div className="form__group">
               <div>
                 <label>Email</label>
-                <input type="email" placeholder="example@gmail.com" />
+                <input type="email" placeholder="please enter your email" />
               </div>
 
               <div>
                 <label>Phone Number</label>
-                <input type="number" placeholder="+880 17*******" />
+                <input type="number" placeholder="please enter your phone no" />
               </div>
             </div>
 
             <div className="form__group">
               <div>
                 <label>Address</label>
-                <input type="text" placeholder="Shalimar Chauk,Delhi" />
+                <input type="text" placeholder="please enter your address" />
               </div>
 
-              <div>
+              <div >
                 <label>Gender</label>
-                <input type="text" placeholder="Male" />
+                <input type="radio" name="gender"  /><label>Male</label>
+                <input type="radio" name="gender"  /><label>Female</label>
+                <input type="radio" name="gender"  /><label>Other</label>
               </div>
             </div>
 

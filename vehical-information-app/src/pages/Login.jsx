@@ -1,61 +1,38 @@
-import React from 'react';
-import {
-  MDBBtn,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardBody,
-  MDBInput,
-  MDBIcon,
-  MDBCheckbox
-}
-from 'mdb-react-ui-kit';
+import React from "react";
+import "../styles/settings.css";
 
-function Login() {
+const Settings = () => {
   return (
-    <div className="marginAndPadding" >
-    <MDBContainer fluid>
+    <div className="settings">
+      <div className="settings__wrapper">
+        <h2 className="settings__title">Login</h2>
+          <form>
+            <div className="form__group">
+              <div>
+                <label>Username/Email</label>
+                <input type="text"  placeholder="please enter your username/email" />
+              </div>
 
-      <MDBRow className='d-flex justify-content-center align-items-center h-100'>
-        <MDBCol col='12'>
+            </div>
 
-          <MDBCard className='bg-white my-5 mx-auto' style={{borderRadius: '1rem', maxWidth: '500px'}}>
-            <MDBCardBody className='p-5 w-100 d-flex flex-column'>
+            <div className="form__group">
+            
+              <div>
+                <label>Password</label>
+                <input type="password" placeholder="please enter your password"/>
+              </div>
+            </div>
 
-              <h2 className="fw-bold mb-2 text-center">Sign in</h2>
-              <p className="text-white-50 mb-3">Please enter your login and password!</p>
-
-              <MDBInput wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' type='email' size="lg"/>
-              <MDBInput wrapperClass='mb-4 w-100' label='Password' id='formControlLg' type='password' size="lg"/>
-
-              <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='Remember password' />
-
-              <MDBBtn size='lg'>
-                Login
-              </MDBBtn>
-
-              <hr className="my-4" />
-
-              <MDBBtn className="mb-2 w-100" size="lg" style={{backgroundColor: '#dd4b39'}}>
-                <MDBIcon fab icon="google" className="mx-2"/>
-                Sign in with google
-              </MDBBtn>
-
-              <MDBBtn className="mb-4 w-100" size="lg" style={{backgroundColor: '#3b5998'}}>
-                <MDBIcon fab icon="facebook-f" className="mx-2"/>
-                Sign in with facebook
-              </MDBBtn>
-
-            </MDBCardBody>
-          </MDBCard>
-
-        </MDBCol>
-      </MDBRow>
-
-    </MDBContainer>
-    </div>
+            <div className="form__group">
+              <div className="profile__img-btns">
+                <button className="reset__btn">Reset</button>
+                <button className="submit__btn">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
   );
-}
+};
 
-export default Login;
+export default Settings;

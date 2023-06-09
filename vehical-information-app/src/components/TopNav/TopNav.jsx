@@ -20,7 +20,7 @@ const TopNav = () => {
             <span className="badge">1</span>
           </span>
           <div className="profile">
-            <Link to="/settings">
+            <Link to="/login">
               <img src={profileImg} alt="" />
             </Link>
           </div>

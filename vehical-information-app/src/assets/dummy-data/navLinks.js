@@ -5,39 +5,45 @@ const navLinks = [
     display: "Dashboard",
   },
   {
-    path: "/bookings",
-    icon: "ri-taxi-line",
-    display: "Booking",
+    path: "/vehicle-images",
+    icon: "ri-image-fill",
+    display: "Vehicles Images",
   },
   {
-    path: "/sell-car",
-    icon: "ri-shopping-bag-line",
-    display: "Sell Cars",
+    path: "/vehicle-details",
+    icon: "ri-truck-line",
+    display: "Vehicle Details",
   },
   {
     path: "/settings",
-    icon: "ri-settings-2-line",
+    icon: "ri-draft-fill",
     display: "Registration",
   },
-  // {
-  //   path: "/login",
-  //   icon: "ri-settings-2-line",
-  //   display: "Login",
-  // },
+  {
+    path: "/vehicle-registration",
+    icon: "ri-car-fill",
+    display: "Vehicle Registration",
+  },
+ 
   // {
   //   path: "/loginandregister",
   //   icon: "ri-settings-2-line",
   //   display: "Login/Register",
   // },
   {
-    path: "/userregistration",
-    icon: "ri-settings-2-line",
+    path: "/user-registration",
+    icon: "ri-user-add-fill",
     display: "User Registration",
   },
   {
-    path: "/ownerregistration",
-    icon: "ri-settings-2-line",
+    path: "/owner-registration",
+    icon: "ri-user-add-fill",
     display: "Owner Registration",
+  },
+  {
+    path: "/login",
+    icon: "ri-user-fill",
+    display: "Login",
   },
 ];
 
