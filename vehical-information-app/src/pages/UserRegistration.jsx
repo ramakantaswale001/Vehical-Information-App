@@ -6,24 +6,16 @@ const Settings = () => {
     <div className="settings">
       <div className="settings__wrapper">
         <h2 className="settings__title">User Registration</h2>
-
-        
-
-        <div className="details__form">
-          <h2 className="profile__title">Profile</h2>
-          <p className="profile__desc">
-            Update your photo and personal details here
-          </p>
           <form>
             <div className="form__group">
               <div>
-                <label>Live in</label>
-                <input type="text" placeholder="Sylhet, Bangladesh" />
+                <label>First Name</label>
+                <input type="text" placeholder="Suresh" />
               </div>
 
               <div>
-                <label>Street</label>
-                <input type="text" placeholder="SYL 3108" />
+                <label>Last Name</label>
+                <input type="text" placeholder="Jain" />
               </div>
             </div>
 
@@ -41,8 +33,8 @@ const Settings = () => {
 
             <div className="form__group">
               <div>
-                <label>Date of Birth</label>
-                <input type="date" placeholder="dd/mm/yyyy" />
+                <label>Address</label>
+                <input type="text" placeholder="Shalimar Chauk,Delhi" />
               </div>
 
               <div>
@@ -61,14 +53,13 @@ const Settings = () => {
               </div>
 
               <div className="profile__img-btns">
-                <button className="dlt__btn">Delete</button>
-                <button className="update__btn">Update</button>
+                <button className="dlt__btn">Reset</button>
+                <button className="update__btn">Submit</button>
               </div>
             </div>
           </form>
         </div>
       </div>
-    </div>
   );
 };
 

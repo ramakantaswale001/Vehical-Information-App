@@ -6,24 +6,16 @@ const Settings = () => {
     <div className="settings">
       <div className="settings__wrapper">
         <h2 className="settings__title">Owner Registration</h2>
-
-        
-
-        <div className="details__form">
-          <h2 className="profile__title">Profile</h2>
-          <p className="profile__desc">
-            Update your photo and personal details here
-          </p>
           <form>
             <div className="form__group">
               <div>
-                <label>Live in</label>
-                <input type="text" placeholder="Sylhet, Bangladesh" />
+                <label>First Name</label>
+                <input type="text" placeholder="Ramesh" />
               </div>
 
               <div>
-                <label>Street</label>
-                <input type="text" placeholder="SYL 3108" />
+                <label>Last Name</label>
+                <input type="text" placeholder="Patel"/>
               </div>
             </div>
 
@@ -51,24 +43,28 @@ const Settings = () => {
               </div>
             </div>
 
-            <div className="form__group">
-              <div>
-                <label>Your Photo</label>
-                <p className="profile-img__desc">
-                  This will be displayed in your profile
-                </p>
-                <input type="file" placeholder="choose file" />
-              </div>
+            <div className="form__group"> 
+            <h2 className="company name__title">Company Name</h2>
+            </div>
 
+            <div className="form__group">
+           // <h2 className="types of business__title"></h2>
+              <select>
+                <option value="toyota">Car</option>
+                <option value="bmw">Bus</option>
+                <option value="audi">Both</option>
+              </select>
+              </div>   
+
+            <div className="form__group">
               <div className="profile__img-btns">
-                <button className="dlt__btn">Delete</button>
-                <button className="update__btn">Update</button>
+                <button className="reset__btn">Reset</button>
+                <button className="submit__btn">Submit</button>
               </div>
             </div>
           </form>
         </div>
       </div>
-    </div>
   );
 };
 
