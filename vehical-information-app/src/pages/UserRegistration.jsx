@@ -36,14 +36,13 @@ const Settings = () => {
                 <label>Address</label>
                 <input type="text" placeholder="please enter your address" />
               </div>
-
-              <div >
-                <label>Gender</label>
-                <input type="radio" name="gender"  /><label>Male</label>
-                <input type="radio" name="gender"  /><label>Female</label>
-                <input type="radio" name="gender"  /><label>Other</label>
+        
+              <div>
+                <label>Pin Code</label>
+                <input type="text" placeholder="please enter your pin code" />
               </div>
-            </div>
+              </div>
+            
 
             <div className="form__group">
               <div>

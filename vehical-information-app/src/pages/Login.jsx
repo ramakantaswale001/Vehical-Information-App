@@ -25,8 +25,8 @@ const Settings = () => {
 
             <div className="form__group">
               <div className="profile__img-btns">
-                <button className="reset__btn">Reset</button>
-                <button className="submit__btn">Submit</button>
+                <button className="dlt__btn">Reset</button>
+                <button className="update__btn">Submit</button>
               </div>
             </div>
           </form>

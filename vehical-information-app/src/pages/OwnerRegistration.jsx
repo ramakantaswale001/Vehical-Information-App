@@ -6,65 +6,80 @@ const Settings = () => {
     <div className="settings">
       <div className="settings__wrapper">
         <h2 className="settings__title">Owner Registration</h2>
-          <form>
-            <div className="form__group">
-              <div>
-                <label>First Name</label>
-                <input type="text" placeholder="Ramesh" />
-              </div>
-
-              <div>
-                <label>Last Name</label>
-                <input type="text" placeholder="Patel"/>
-              </div>
+        <form>
+          <div className="form__group">
+            <div>
+              <label>First Name</label>
+              <input type="text" placeholder="please enter your first name" />
             </div>
 
-            <div className="form__group">
-              <div>
-                <label>Email</label>
-                <input type="email" placeholder="example@gmail.com" />
-              </div>
+            <div>
+              <label>Last Name</label>
+              <input type="text" placeholder="please enter your last name" />
+            </div>
+          </div>
 
-              <div>
-                <label>Phone Number</label>
-                <input type="number" placeholder="+880 17*******" />
-              </div>
+          <div className="form__group">
+            <div>
+              <label>Email</label>
+              <input type="email" placeholder="please enter your email" />
             </div>
 
-            <div className="form__group">
-              <div>
-                <label>Date of Birth</label>
-                <input type="date" placeholder="dd/mm/yyyy" />
-              </div>
+            <div>
+              <label>Phone Number</label>
+              <input type="number" placeholder="please enter your phone no" />
+            </div>
+          </div>
 
-              <div>
-                <label>Gender</label>
-                <input type="text" placeholder="Male" />
-              </div>
+          <div className="form__group">
+            <div>
+              <label>Company Name</label>
+              <input type="text" placeholder="Please enter your company name" />
             </div>
 
-            <div className="form__group"> 
-            <h2 className="company name__title">Company Name</h2>
-            </div>
-
-            <div className="form__group">
-           // <h2 className="types of business__title"></h2>
+            <div>
+              <label>Types Of Business(TOB)</label>
               <select>
-                <option value="toyota">Car</option>
-                <option value="bmw">Bus</option>
-                <option value="audi">Both</option>
+                <option value="0" >-------------------------------------select TOB-----------------------------</option>
+                <option value="car">Car</option>
+                <option value="bus">Bus</option>
+                <option value="Both">Both</option>
               </select>
-              </div>   
-
-            <div className="form__group">
-              <div className="profile__img-btns">
-                <button className="reset__btn">Reset</button>
-                <button className="submit__btn">Submit</button>
-              </div>
             </div>
-          </form>
-        </div>
+          </div>
+
+          <div className="form__group">
+            <div>
+              <label>Established Year Of Company</label>
+              <input type="date" placeholder="dd/mm/yyyy" />
+            </div>
+
+            <div>
+              <label>Company Discription</label>
+              <textarea rows="5" cols="30" placeholder="please enter your company discription"></textarea>
+
+            </div>
+
+          </div>
+
+
+          <div className="form__group">
+            <div>
+              <label>Office Address</label>
+              <textarea rows="5" cols="30" placeholder="please enter your office address"></textarea>
+            </div>
+          </div>
+
+
+          <div className="form__group">
+            <div className="profile__img-btns">
+              <button className="dlt__btn">Reset</button>
+              <button className="update__btn">Submit</button>
+            </div>
+          </div>
+        </form>
       </div>
+    </div>
   );
 };
 

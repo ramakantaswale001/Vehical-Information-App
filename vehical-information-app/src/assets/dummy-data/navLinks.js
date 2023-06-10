@@ -14,11 +14,11 @@ const navLinks = [
     icon: "ri-truck-line",
     display: "Vehicle Details",
   },
-  {
-    path: "/settings",
-    icon: "ri-draft-fill",
-    display: "Registration",
-  },
+  // {
+  //   path: "/registration",
+  //   icon: "ri-draft-fill",
+  //   display: "Registration",
+  // },
   {
     path: "/vehicle-registration",
     icon: "ri-car-fill",
