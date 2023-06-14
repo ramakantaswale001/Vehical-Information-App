@@ -1,11 +1,11 @@
 import React from "react";
-import "../styles/settings.css";
+import "../styles/registration.css";
 
-const Settings = () => {
+const Login = () => {
   return (
-    <div className="settings">
-      <div className="settings__wrapper">
-        <h2 className="settings__title">Login</h2>
+    <div className="registration">
+      <div className="registration__wrapper">
+        <h2 className="registration__title">Login</h2>
           <form>
             <div className="form__group">
               <div>
@@ -35,4 +35,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default Login;

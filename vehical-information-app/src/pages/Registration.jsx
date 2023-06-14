@@ -1,13 +1,13 @@
 // import React from "react";
-// import "../styles/settings.css";
+// import "../styles/registration.css";
 
-// const Settings = () => {
+// const Registration = () => {
 //   return (
-//     <div className="settings">
-//       <div className="settings__wrapper">
-//         <h2 className="settings__title">User Registration</h2>
+//     <div className="registration">
+//       <div className="registration__wrapper">
+//         <h2 className="registration__title">User Registration</h2>
 
-//         <div className="settings__top">
+//         <div className="registration__top">
 //           {/* <button className="setting__btn"> Login </button> */}
 //           {/* <button className="setting__btn">Email</button>
 //           <button className="setting__btn">Notification</button> */}
@@ -72,4 +72,4 @@
 //   );
 // };
 
-// export default Settings;
+// export default Registration;
