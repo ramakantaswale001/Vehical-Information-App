@@ -4,7 +4,6 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import VehicleImages from "../pages/VehicleImages";
 import VehicleDetails from "../pages/VehicleDetails";
-import Registration from "../pages/Registration";
 import Login from "../pages/Login";
 import OwnerRegistration from "../pages/OwnerRegistration";
 import UserRegistration from "../pages/UserRegistration";
@@ -21,7 +20,6 @@ const Router = () => {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/vehicle-details" element={<VehicleDetails />} />
       <Route path="/vehicle-images" element={<VehicleImages />} />
-      <Route path="/settings" element={<Registration />} />
       <Route path="/login" element={<Login />} />
       <Route path="/owner-registration" element={<OwnerRegistration />} />
       <Route path="/user-registration" element={<UserRegistration />} /> 

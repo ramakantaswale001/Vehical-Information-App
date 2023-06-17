@@ -39,7 +39,7 @@ let userLogin = (req,res) =>{
       console.log('The solution is: ', results[0]);
       
       if(results.length == 0) {
-          res.send("Username and password is not valid");
+          res.send("");
       } else {
         
           const token = jwt.sign(

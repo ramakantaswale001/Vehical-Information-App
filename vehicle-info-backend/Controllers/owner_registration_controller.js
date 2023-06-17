@@ -21,13 +21,12 @@ let addOwnerRegistration = (req, res) => {
     return res.status(404).send(error.details)
   }
 
-  let { firstName, lastName, email, phone_no, company_name, types_of_business, company_description, company_address } = req.body;
+  let { first_name, last_name, email, phone_no, company_name, type_of_business, estb_yr, company_description, office_address } = req.body;
   console.log(req.body);
 
-  let sql = `insert into OwnerRegistration set (firstName, lastName,email, phone_no, company_name, types_of_business, company_description ,company_address)
-  values("${firstName}", "${lastName}", "${email}", "${phone_no}", "${company_name}", "${types_of_business}","${company_description}", "${company_address}",now()`
-
-  mysqlConnect.query(sql, OwnerRegistrationData, function (error, results, fields) {
+  let sql = `INSERT INTO owner_registation (first_name, last_name,email, phone_no, company_name, type_of_business, estb_yr, company_description , office_address) VALUES ('${first_name}', '${last_name}', '${email}', '${phone_no}', '${company_name}', '${type_of_business}','${estb_yr}', '${company_description}', '${office_address}')`;
+console.log("sql query",sql);
+  mysqlConnect.query(sql,  function (error, results, fields) {
     if (error) throw error;
 
   });
@@ -39,7 +38,7 @@ let deleteOwnerRegistration = (req, res) => {
   let id = req.params.id;
   console.log(id)
 
-  let sql = `delete from OwnerRegistration where id=${id}`;
+  let sql = `delete from owner_registation where id=${id}`;
   mysqlConnect.query(sql, function (error, results, fields) {
     if (error) throw error;
     console.log("The solution is: ", results);
@@ -50,7 +49,7 @@ let deleteOwnerRegistration = (req, res) => {
 let updateOwnerRegistration = (req, res) => {
   let id = req.params.id;
   let updateData = req.body;
-  let sql = `update OwnerRegistration set ? where id=${id}`;
+  let sql = `update owner_registation set ? where id=${id}`;
   console.log(sql)
   mysqlConnect.query(sql, updateData, function (error, results, fields) {
     if (error) throw error;

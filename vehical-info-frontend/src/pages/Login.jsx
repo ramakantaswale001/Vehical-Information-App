@@ -25,13 +25,13 @@ const Login = () => {
           console.log("response:-",response);
            
           if(response.data.length == 0 ) {
-            console.log('username and password not match');
+            console.log('username and password not matched');
             return Swal.fire({
-              icon: "error",
-              title: "ERROR!",
-              text: "username and password not match",
-              showConfirmButton: true,
-            });
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Username Or Password not matched !!',
+              
+            })
           } else {
             localStorage.setItem("token",response.data[0].token)
            
@@ -71,8 +71,8 @@ const Login = () => {
 
             <div className="form__group">
               <div className="profile__img-btns">
-                <button className="dlt__btn">Reset</button>
-                <button className="update__btn">Submit</button>
+                <button type="reset" className="dlt__btn">Reset</button>
+                <button type="submit" className="update__btn">Submit</button>
               </div>
             </div>
           </form>

@@ -13,18 +13,11 @@ let getVehicleRegistration=(req,res)=>{
 
 let addVehicleRegistration= (req, res) => {
 
-  const {error,value}=vehicleRegistrationValidator.validateSchema(req.body)
-
-  if (error) {
-    console.log(error)
-    return res.status(404).send(error.details)
-  }
-
-    let {select_vehicle,seating_capacity,AC_NonAC}=req.body;
+    let {select_vehicle,seating_capacity,AC_NonAC,rate_per_km}=req.body;
     console.log(req.body);
 
-    let sql =`insert into VehicleRegistration (select_vehicle,seating_capacity,AC_NonAC)
-     values ("${select_vehicle}","${seating_capacity}","${AC_NonAC}"`;
+    let sql =`insert into vehicle_registration (select_vehicle,seating_capacity,AC_NonAC,rate_per_km)
+     values ("${select_vehicle}","${seating_capacity}","${AC_NonAC}","${rate_per_km}")`;
      console.log(sql)
 
     mysqlConnect.query(sql, function (error, results, fields) {
@@ -59,7 +52,7 @@ let updateVehicleRegistration=(req,res)=>{
         if (error) throw error;
         console.log("The solution is: ", results);
       });
-    res.send(`this is put method and entered id ${id} of comment router`);
+    res.send(`this is put method and entered id ${id} of VehicleRegistration router`);
 }
 
 module.exports={getVehicleRegistration,addVehicleRegistration,deleteVehicleRegistration,updateVehicleRegistration}

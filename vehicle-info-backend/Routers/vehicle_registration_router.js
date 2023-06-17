@@ -5,7 +5,7 @@ const authValidation = require("../helpers/auth")
 
 router.get("/get",authValidation,VehicleRegistrationController.getVehicleRegistration);
 
-router.post('/post',authValidation,VehicleRegistrationController.addVehicleRegistration);
+router.post('/add',authValidation,VehicleRegistrationController.addVehicleRegistration);
 
 router.delete("/delete/:id",authValidation,VehicleRegistrationController.deleteVehicleRegistration);
 
