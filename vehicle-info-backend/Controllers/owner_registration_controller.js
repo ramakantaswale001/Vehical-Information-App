@@ -12,8 +12,6 @@ let getOwnerRegistration = (req, res) => {
 
 let addOwnerRegistration = (req, res) => {
 
-  let OwnerRegistrationData = req.body;
-
   const { error, value } = ownerRegistrationValidator.validateSchema(req.body)
 
   if (error) {

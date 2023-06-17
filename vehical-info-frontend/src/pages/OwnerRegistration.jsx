@@ -2,7 +2,6 @@ import "../styles/registration.css";
 import { React, useRef } from "react";
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useNavigate } from "react-router-dom";
 
 
 const OwnerRegistration = () => {
@@ -16,8 +15,6 @@ const OwnerRegistration = () => {
   let estb_yr=useRef();
   let company_description=useRef();
   let office_address = useRef();
-  
-  const navigate = useNavigate();
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -44,7 +41,7 @@ const OwnerRegistration = () => {
         // handle success
         console.log("response:-", response);
 
-        if (response.data.length != 0) {
+        if (response.data.length !== 0) {
           console.log("response.data",response.data)
           console.log('Data Summited Successfully !!');
           return Swal.fire(

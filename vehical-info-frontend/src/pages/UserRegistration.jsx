@@ -2,7 +2,6 @@ import "../styles/registration.css";
 import { React, useRef, useState } from "react";
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import { useNavigate } from "react-router-dom";
 
 const UserRegistration = () => {
 
@@ -17,8 +16,6 @@ const UserRegistration = () => {
 
   const [image, setImage] = useState("");
   console.log(image, "--------------19----------------");
-
-  const navigate = useNavigate();
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
@@ -45,7 +42,7 @@ const UserRegistration = () => {
         // handle success
         console.log("response:-", response);
 
-        if (response.data.length != 0) {
+        if (response.data.length !== 0) {
           console.log("response.data",response.data)
           console.log('Data Summited Successfully !!');
           return Swal.fire(

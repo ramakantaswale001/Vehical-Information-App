@@ -23,7 +23,7 @@ let addVehicleRegistration= (req, res) => {
     mysqlConnect.query(sql, function (error, results, fields) {
         if (error){
             console.log(sql)
-            throw error;
+            throw error;  
         } 
 
       });
@@ -35,7 +35,7 @@ let deleteVehicleRegistration=(req,res)=>{
     let id =req.params.id;
     console.log(id)
 
-    let sql = `delete from VehicleRegistration where id=${id}`;
+    let sql = `delete from vehicle_registration where id=${id}`;
     mysqlConnect.query(sql, function (error, results, fields) {
         if (error) throw error;
         console.log("The solution is: ", results);
@@ -46,7 +46,7 @@ let deleteVehicleRegistration=(req,res)=>{
 let updateVehicleRegistration=(req,res)=>{
     let id=req.params.id;
     let updateData=req.body;
-    let sql = `update comment set ? where id=${id}`;
+    let sql = `update vehicle_registration set ? where id=${id}`;
     console.log(sql)
     mysqlConnect.query(sql,updateData, function (error, results, fields) {
         if (error) throw error;
