@@ -5,7 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import VehicleImages from "../pages/VehicleImages";
 import VehicleDetails from "../pages/VehicleDetails";
 import Login from "../pages/Login";
-import OwnerRegistration from "../pages/OwnerRegistration";
+import Owner from "../pages/Owner";
 import UserRegistration from "../pages/UserRegistration";
 import VehicleRegistration from "../pages/VehicleRegistration"
 
@@ -21,7 +21,7 @@ const Router = () => {
       <Route path="/vehicle-details" element={<VehicleDetails />} />
       <Route path="/vehicle-images" element={<VehicleImages />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/owner-registration" element={<OwnerRegistration />} />
+      <Route path="/owner" element={<Owner />} />
       <Route path="/user-registration" element={<UserRegistration />} /> 
       <Route path="/vehicle-registration" element={<VehicleRegistration />} /> 
     </Routes>

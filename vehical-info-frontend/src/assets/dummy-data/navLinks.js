@@ -36,9 +36,9 @@ const navLinks = [
     display: "User Registration",
   },
   {
-    path: "/owner-registration",
+    path: "/owner",
     icon: "ri-user-add-fill",
-    display: "Owner Registration",
+    display: "Owner",
   },
   {
     path: "/login",

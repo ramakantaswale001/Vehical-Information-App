@@ -5,7 +5,7 @@ const cors = require('cors')
 const port = 5050;
 const bodyParser = require("body-parser");
 
-const ownerRegistrationRouter = require("./Routers/owner_registration_router");
+const ownerRouter = require("./Routers/owner_router");
 const vehicleRegistrationRouter = require("./Routers/vehicle_registration_router");
 const userRouter = require("./Routers/user_router")
 
@@ -19,7 +19,7 @@ let  corsOptions = {
 }
 app.use(cors(corsOptions));
 
-app.use("/ownerRegistration", ownerRegistrationRouter);
+app.use("/owner", ownerRouter);
 app.use("/vehicleRegistration", vehicleRegistrationRouter);
 app.use("/user", userRouter);
 
