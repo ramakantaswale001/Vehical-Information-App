@@ -16,7 +16,7 @@ const VehicalDetails = () => {
 
         <div className="offer__wrapper">
           <div className="offer__top">
-            <h2 className="sell__car-title">Buses/Cars Details</h2>
+            <h2 className="sell__car-title">Type Of Vehicle</h2>
 
             <div className="filter__widget-01">
               <select>
@@ -28,6 +28,25 @@ const VehicalDetails = () => {
                 <option value="audi">Hyundai</option>
               </select>
             </div>
+          </div>
+
+          <div>
+          <form>
+          <div className="form__group">
+          
+            <div>
+              <label></label>
+              <input type="" placeholder=""/>
+            </div>
+          </div>
+
+          <div className="form__group">
+            <div className="profile__img-btns">
+              <button type="reset" className="dlt__btn">Reset</button>
+              <button type="submit" className="update__btn">Submit</button>
+            </div>
+          </div>
+        </form>
           </div>
 
           <div className="offer__list">

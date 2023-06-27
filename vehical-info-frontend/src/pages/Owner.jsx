@@ -18,7 +18,7 @@ const Owner = () => {
   let company_name = useRef();
   let organization_name = useRef();
   let type_of_business_id = useRef();
-  let registration_date = useRef();
+  let establish_year_of_company = useRef();
   let company_description = useRef();
   let office_address = useRef();
   let office_city = useRef();
@@ -46,7 +46,7 @@ const Owner = () => {
       company_name: company_name.current.value,
       organization_name: organization_name.current.value,
       type_of_business_id: type_of_business_id.current.value,
-      registration_date: registration_date.current.value,
+      establish_year_of_company: establish_year_of_company.current.value,
       company_description: company_description.current.value,
       office_address: office_address.current.value,
       office_city: office_city.current.value,
@@ -169,8 +169,8 @@ const Owner = () => {
 
           <div className="form__group">
             <div>
-              <label>Registration Date</label>
-              <input type="date" ref={registration_date} placeholder="Please enter your registration date" />
+              <label>Establish Year Of Company</label>
+              <input type="date" ref={establish_year_of_company} placeholder="dd/mm/yyy" />
             </div>
 
             <div>

@@ -20,11 +20,26 @@ const navLinks = [
   //   display: "Registration",
   // },
   {
+    path: "/type_of_business",
+    icon: "",
+    display: "Type Of Business",
+  },
+  {
+    path: "/vehicle_image",
+    icon: "",
+    display: "Vehicle Image",
+  },
+  {
+    path: "/vehicle_type",
+    icon: "",
+    display: "VehicleType",
+  },
+  {
     path: "/vehicle-registration",
     icon: "ri-car-fill",
     display: "Vehicle Registration",
   },
- 
+
   // {
   //   path: "/loginandregister",
   //   icon: "ri-settings-2-line",
