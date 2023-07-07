@@ -15,14 +15,10 @@ const Add = ({UserData,setUser,setIsAddingUser}) => {
     const [photo, setPhoto] = useState("");
     const [password, setPassword] = useState("");
 
-   
-
     // useEffect(() => {
     //     firstName.current.focus();
     // }, []);
 
-
- 
     const handleAddUser = (e) => {
         e.preventDefault();
         if (!firstName || !lastName || !email || !phone_no || !address || !pin_code || !photo || !password) {

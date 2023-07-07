@@ -4,27 +4,27 @@ import axios from "axios";
 
 import Swal from "sweetalert2";
 
-const Add = ({ OwnerData, setOwner, setIsAddingOwner }) => {
+const Add = ({ OwnerData, setOwner,setIsAddingOwner }) => {
 
-  const [firstName, setFirstName] = useState(selectedOwner.firstName);
-  const [lastName, setLastName] = useState(selectedOwner.lastName);
-  const [DOB, setDOB] = useState(selectedOwner.DOB)
-  const [email, setEmail] = useState(selectedOwner.email);
-  const [phone_no, setPhone_no] = useState(selectedOwner.phone_no);
-  const [business_phone_no, setBusiness_phone_no] = useState(selectedOwner.setBusiness_phone_no);
-  const [business_email, setBusiness_email] = useState(selectedOwner.business_email);
-  const [pin_code, setPin_code] = useState(selectedOwner.pin_code);
-  const [state, setState] = useState(selectedOwner.state);
-  const [company_name, setCompany_name] = useState(selectedOwner.company_name);
-  const [type_of_business, setType_of_business] = useState(selectedOwner.type_of_business);
-  const [registration_date, setRegistration_date] = useState(selectedOwner.registration_date);
-  const [company_description, setCompany_description] = useState(selectedOwner.company_description);
-  const [address, setAddress] = useState(selectedUser.address);
-  const [city, setCity] = useState(selectedOwner.city);
-  const [country, setCountry] = useState(selectedOwner.country);
-  const [GST_number, setGST_number] = useState(selectedOwner.GST_number);
-  const [created, setCreated] = useState(selectedOwner.created);
-  const [modified, setModified] = useState(selectedOwner.modified);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [DOB, setDOB] = useState("")
+  const [email, setEmail] = useState("");
+  const [phone_no, setPhone_no] = useState("");
+  const [business_phone_no, setBusiness_phone_no] = useState("");
+  const [business_email, setBusiness_email] = useState("");
+  const [pin_code, setPin_code] = useState("");
+  const [state, setState] = useState("");
+  const [company_name, setCompany_name] = useState("");
+  const [type_of_business, setType_of_business] = useState("");
+  const [registration_date, setRegistration_date] = useState("");
+  const [company_description, setCompany_description] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [GST_number, setGST_number] = useState("");
+  const [created, setCreated] = useState("");
+  const [modified, setModified] = useState("");
 
   const handleAddOwner = (e) => {
     e.preventDefault();
@@ -65,7 +65,7 @@ const Add = ({ OwnerData, setOwner, setIsAddingOwner }) => {
     let addOwner = `http://localhost:5000/owner/update/${id}`;
 
     axios
-      .post(addOwner,
+      .post(addOwner,Owner,
         {
           headers: {
             token: localStorage.getItem('token')
@@ -78,10 +78,6 @@ const Add = ({ OwnerData, setOwner, setIsAddingOwner }) => {
       .catch(function (error) {
         console.log(error);
       });
-
-    UserData.push(newUser);
-    setOwner(User=Data);
-    setIsAddingOwner(false);
 
 
     Swal.fire({
@@ -97,7 +93,7 @@ const Add = ({ OwnerData, setOwner, setIsAddingOwner }) => {
 
     <div className="small-container">
       <form onSubmit={handleAddOwner}>
-        <h3>Add User</h3>
+        <h3>Add Owner</h3>
         <label htmlFor="firstName">firstName</label>
         <input
           id="firstName"

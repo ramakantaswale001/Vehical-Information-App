@@ -10,15 +10,15 @@ import List from "./List";
 import Add from "./Add";
 
 const Index = () => {
-  const [UserData, setUser] = useState();
-  const [selectedUser, setSelectedUser] = useState(null);
-  const [isAddingUser, setIsAddingUser] = useState(false);
-  const [isEditingUser, setIsEditingUser] = useState(false);
+  const [OwnerData, setOwner] = useState();
+  const [selectedOwner, setSelectedOwner] = useState(null);
+  const [isAddingOwner, setIsAddingOwner] = useState(false);
+  const [isEditingOwner, setIsEditingOwner] = useState(false);
   
   useEffect(()=>{
-    let getUser = "http://localhost:5000/user/get";
+    let getOwner = "http://localhost:5000/owner/get";
     axios
-      .get(getUser,
+      .get(getOwner,
         {
           headers: {
               token: localStorage.getItem('token')
@@ -28,24 +28,24 @@ const Index = () => {
         //console.log(response);
         const data = response.data
         console.log('---------23-----',data) 
-        setUser(data) 
+        setOwner(data) 
       })
       .catch(function (error) {
         console.log(error);
       });
   },[]);
 
-  const handleEditUser = (id) => {
-    console.log("----editUser-id--", id);
-    const [singleUser] = UserData.filter((singleUser) => singleUser.id === id);
-    console.log("----singleUser---", singleUser);
-    setSelectedUser(singleUser);
-    setIsEditingUser(true);
+  const handleEditOwner = (id) => {
+    console.log("----editOwner-id--", id);
+    const [singleOwner] = OwnerData.filter((singleOwner) => singleOwner.id === id);
+    console.log("----singleUser---", singleOwner);
+    setSelectedOwner(singleOwner);
+    setIsEditingOwner(true);
    
 
   };
 
-  const handleDeleteUser = (id) => {
+  const handleDeleteOwner = (id) => {
     Swal.fire({
       icon: "warning",
       title: "Are you sure you want to delete",
@@ -56,8 +56,8 @@ const Index = () => {
     }).then((result) => {
       if (result.value){
       
-        let deleteUserApi =  `http://localhost:5000/user/delete/${id}`;
-        axios.delete(deleteUserApi, {
+        let deleteOwnerApi =  `http://localhost:5000/owner/delete/${id}`;
+        axios.delete(deleteOwnerApi, {
                 headers: {
                     token: localStorage.getItem('token')
                 }
@@ -68,7 +68,7 @@ const Index = () => {
              Swal.fire({
               icon:"success",
               title:'deleted',
-              text:`User has been deleted`,
+              text:`Owner has been deleted`,
               showConfirmButton:false,
               timer:1200,
             });
@@ -87,32 +87,32 @@ const Index = () => {
     <div className="container-right" style={{marginTop:"10%"}}>
       {/* For List Showing on screen */}
       {/* --Logic-- When adding and editing is not showing show Header and List */}
-      {!isAddingUser && !isEditingUser && (
+      {!isAddingOwner && !isEditingOwner && (
         <>
-          <Header setIsAddingUser={setIsAddingUser} />
+          <Header setIsAddingOwner={setIsAddingOwner} />
           <List
-            UserData={UserData}
-            handleEditUser={handleEditUser}
-            handleDeleteUser={handleDeleteUser}
+            OwnerData={OwnerData}
+            handleEditOwner={handleEditOwner}
+            handleDeleteOwner={handleDeleteOwner}
           />
         </>
       )}
       {/* For Adding  */}
-      {isAddingUser && (
+      {isAddingOwner && (
         <Add
-          UserData={UserData}
-          setUser={setUser}
-          setIsAddingUser={setIsAddingUser}
+          OwnerData={OwnerData}
+          setOwner={setOwner}
+          setIsAddingOwner={setIsAddingOwner}
         />
       )}
 
       {/* For Editing page initially false */}
-      {isEditingUser && (
+      {isEditingOwner && (
         <Edit
-          UserData={UserData}
-          selectedUser={selectedUser}
-          setUser={setUser}
-          setIsEditingUser={setIsEditingUser}
+          OwnerData={OwnerData}
+          selectedOwner={selectedOwner}
+          setOwner={setOwner}
+          setIsEditingOwner={setIsEditingOwner}
         />
       )}
     </div>

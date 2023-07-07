@@ -4,16 +4,15 @@ import Swal from "sweetalert2";
 import axios from 'axios';
 
 
-const Add = ({UserData,setUser,setIsAddingUser}) => {
+const Add = ({VehicleData,setVehicle,setIsAddingVehicle}) => {
 
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone_no, setPhone_no] = useState("");
-    const [address, setAddress] = useState("");
-    const [pin_code, setPin_code] = useState("");
-    const [photo, setPhoto] = useState("");
-    const [password, setPassword] = useState("");
+  const [vehicle_type_id, setVehicle_type_id] = useState("");
+  const [seating_capacity, setSeating_capacity] = useState("");
+  const [vehicle_image_id , setVehicle_image_id] = useState("");
+  const [type_of_vehicle, setType_of_vehicle] = useState("");
+  const [rate_per_km, setRate_per_km] = useState("");
+  const [rent_amount, setRent_amount] = useState("");
+  const [owner_id, setOwner_id] = useState("");
 
    
 
@@ -23,9 +22,9 @@ const Add = ({UserData,setUser,setIsAddingUser}) => {
 
 
  
-    const handleAddUser = (e) => {
+    const handleAddVehicle = (e) => {
         e.preventDefault();
-        if (!firstName || !lastName || !email || !phone_no || !address || !pin_code || !photo || !password) {
+        if (!vehicle_type_id || !seating_capacity || !vehicle_image_id || !type_of_vehicle || !rate_per_km || !rent_amount || !owner_id) {
             return Swal.fire({
             icon: "error",
             title: "ERROR!",
@@ -34,24 +33,23 @@ const Add = ({UserData,setUser,setIsAddingUser}) => {
             });
         }
     
-        const  id = UserData.length + 1;
+        const  id = VehicleData.length + 1;
     
-        const newUser = {
+        const newVehicle = {
            
-            firstName,
-            lastName,
-            email,
-            password,
-            phone_no,
-            address,
-            pin_code,
-            photo
+          vehicle_type_id,
+          seating_capacity,
+          vehicle_image_id,
+          type_of_vehicle,
+          rate_per_km,
+          rent_amount,
+          owner_id
        }
 
-        let addUser = "http://localhost:5000/user/adduser";
+        let addVehicle = "http://localhost:5000/Vehicle/addvehicle";
         
         axios
-            .post(addUser, newUser,
+            .post(addVehicle, newVehicle,
               {
                 headers: {
                     token: localStorage.getItem('token')
@@ -64,15 +62,15 @@ const Add = ({UserData,setUser,setIsAddingUser}) => {
             console.log(error);
             });
 
-        UserData.push(newUser);
-        setUser(UserData);
-        setIsAddingUser(false);
+        VehicleData.push(newVehicle);
+        setVehicle(VehicleData);
+        setIsAddingVehicle(false);
     
     
         Swal.fire({
             icon:"success",
             title:"Added",
-            text: `${firstName} ${lastName}'s data has been Added`,
+            text: `${vehicle_type_id} ${seating_capacity}'s data has been Added`,
             showConfirmButton:false,
             timer:1200
         });
@@ -80,76 +78,68 @@ const Add = ({UserData,setUser,setIsAddingUser}) => {
     
   return (
     <div className="small-container">
-    <form onSubmit={handleAddUser}>
-      <h3>Add User</h3>
-      <label   htmlFor="firstName">firstName</label>
+    <form onSubmit={handleAddVehicle}>
+      <h3>Add Vehicle</h3>
+      <label   htmlFor="vehicle_type_id">Vehicle Type Id</label>
         <input
-          id="firstName"
-          type="text"
-          name="firstName"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-
-        <label htmlFor="lastName">lastName</label>
-        <input
-          id="lastName"
-          type="text"
-          name="lastName"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-
-        <label htmlFor="email">email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <label htmlFor="password">password</label>
-        <input
-          id="password"
-          type="text"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <label htmlFor="phone_no">phone_no</label>
-        <input
-          id="phone_no"
+          id="vehicle_type_id"
           type="number"
-          name="phone_no"
-          value={phone_no}
-          onChange={(e) => setPhone_no(e.target.value)}
+          name="vehicle_type_id"
+          value={vehicle_type_id}
+          onChange={(e) => setVehicle_type_id(e.target.value)}
+        />
+
+        <label htmlFor="seating_capacity">Seating Capacity</label>
+        <input
+          id="seating_capacity"
+          type="text"
+          name="seating_capacity"
+          value={seating_capacity}
+          onChange={(e) => setSeating_capacity(e.target.value)}
+        />
+
+        <label htmlFor="vehicle_image_id">Vehicle Image Id</label>
+        <input
+          id="vehicle_image_id"
+          type="number"
+          name="vehicle_image_id"
+          value={vehicle_image_id}
+          onChange={(e) => setVehicle_image_id(e.target.value)}
+        />
+
+        <label htmlFor="type_of_vehicle">Type Of Vehicle</label>
+        <input
+          id="type_of_vehicle"
+          type="text"
+          name="type_of_vehicle"
+          value={type_of_vehicle}
+          onChange={(e) => setType_of_vehicle(e.target.value)}
+        />
+
+        <label htmlFor="rate_per_km">Rate Per Km</label>
+        <input
+          id="rate_per_km"
+          type="number"
+          name="rate_per_km"
+          value={rate_per_km}
+          onChange={(e) => setRate_per_km(e.target.value)}
         />
     
-         <label htmlFor="address">address</label>
+         <label htmlFor="rent_amount">Rent Amount</label>
         <input
-          id="address"
+          id="rent_amount"
           type="text"
-          name="address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
+          name="rent_amount"
+          value={rent_amount}
+          onChange={(e) => setRent_amount(e.target.value)}
         />
-        <label htmlFor="pin_code">pin_code</label>
+        <label htmlFor="owner_id">Owner Id</label>
         <input
-          id="pin_code"
+          id="owner_id"
           type="number"
-          name="pin_code"
-          value={pin_code}
-          onChange={(e) => setPin_code(e.target.value)}
-        />
-        <label htmlFor="photo">photo</label>
-        <input
-          id="photo"
-          type="file"
-          name="photo"
-          value={photo}
-          onChange={(e) => setPhoto(e.target.value)}
+          name="owner_id"
+          value={owner_id}
+          onChange={(e) => setOwner_id(e.target.value)}
         />
 
     
@@ -160,7 +150,7 @@ const Add = ({UserData,setUser,setIsAddingUser}) => {
             className="muted-button"
             type="button"
             value="Cancel"
-            onClick={() => setIsAddingUser(false)}
+            onClick={() => setIsAddingVehicle(false)}
         />
     </div>
     </form>

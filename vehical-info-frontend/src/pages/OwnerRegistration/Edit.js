@@ -4,30 +4,30 @@ import axios from "axios";
 
 import Swal from "sweetalert2";
 
-const Edit = ({ UserData, selectedUser, setUser, setIsEditingUser }) => {
-  const id = selectedUser.id;
+const Edit = ({ OwnerData, selectedOwner, setOwner, setIsEditingOwner }) => {
+  const id = selectedOwner.id;
   console.log("---updateid---", id)
-  const [firstName, setFirstName] = useState(selectedUser.firstName);
-  const [lastName, setLastName] = useState(selectedUser.lastName);
-  const [DOB, setDOB] = useState(selectedUser.DOB)
-  const [email, setEmail] = useState(selectedUser.email);
-  const [phone_no, setPhone_no] = useState(selectedUser.phone_no);
-  const [business_phone_no, setBusiness_phone_no] = useState(selectedUser.setBusiness_phone_no);
-  const [business_email, setBusiness_email] = useState(selectedUser.business_email);
-  const [pin_code, setPin_code] = useState(selectedUser.pin_code);
-  const [state, setState] = useState(selectedUser.state);
-  const [company_name, setCompany_name] = useState(selectedUser.company_name);
-  const [type_of_business, setType_of_business] = useState(selectedUser.type_of_business);
-  const [registration_date, setRegistration_date] = useState(selectedUser.registration_date);
-  const [company_description, setCompany_description] = useState(selectedUser.company_description);
-  const [address, setAddress] = useState(selectedUser.address);
-  const [city, setCity] = useState(selectedUser.city);
-  const [country, setCountry] = useState(selectedUser.country);
-  const [GST_number, setGST_number] = useState(selectedUser.GST_number);
-  const [created, setCreated] = useState(selectedUser.created);
-  const [modified, setModified] = useState(selectedUser.modified);
+  const [firstName, setFirstName] = useState(selectedOwner.firstName);
+  const [lastName, setLastName] = useState(selectedOwner.lastName);
+  const [DOB, setDOB] = useState(selectedOwner.DOB)
+  const [email, setEmail] = useState(selectedOwner.email);
+  const [phone_no, setPhone_no] = useState(selectedOwner.phone_no);
+  const [business_phone_no, setBusiness_phone_no] = useState(selectedOwner.setBusiness_phone_no);
+  const [business_email, setBusiness_email] = useState(selectedOwner.business_email);
+  const [pin_code, setPin_code] = useState(selectedOwner.pin_code);
+  const [state, setState] = useState(selectedOwner.state);
+  const [company_name, setCompany_name] = useState(selectedOwner.company_name);
+  const [type_of_business, setType_of_business] = useState(selectedOwner.type_of_business);
+  const [registration_date, setRegistration_date] = useState(selectedOwner.registration_date);
+  const [company_description, setCompany_description] = useState(selectedOwner.company_description);
+  const [address, setAddress] = useState(selectedOwner.address);
+  const [city, setCity] = useState(selectedOwner.city);
+  const [country, setCountry] = useState(selectedOwner.country);
+  const [GST_number, setGST_number] = useState(selectedOwner.GST_number);
+  const [created, setCreated] = useState(selectedOwner.created);
+  const [modified, setModified] = useState(selectedOwner.modified);
 
-  const handleUpdateUser = (e) => {
+  const handleUpdateOwner = (e) => {
     e.preventDefault();
 
     if (!firstName || !lastName || !DOB || !email || !phone_no || !business_phone_no || !business_email || !pin_code || !state || !company_name || !type_of_business || !registration_date || !company_description || !city || !country || !GST_number || !created || !modified) {
@@ -39,7 +39,7 @@ const Edit = ({ UserData, selectedUser, setUser, setIsEditingUser }) => {
       });
     }
 
-    const User = {
+    const Owner = {
       id,
       firstName,
       lastName,
@@ -61,10 +61,10 @@ const Edit = ({ UserData, selectedUser, setUser, setIsEditingUser }) => {
       modified
     };
 
-    let updateUser = `http://localhost:5000/owner/update/${id}`;
+    let updateOwner = `http://localhost:5000/owner/update/${id}`;
 
     axios
-      .put(updateUser, User,
+      .put(updateOwner, Owner,
         {
           headers: {
             token: localStorage.getItem('token')
@@ -73,14 +73,14 @@ const Edit = ({ UserData, selectedUser, setUser, setIsEditingUser }) => {
       )
       .then(function (response) {
         console.log(response.data);
-        for (let i = 0; i < UserData.length; i++) {
-          if (UserData[i].id === id) {
-            UserData.splice(i, 1, User);
+        for (let i = 0; i < OwnerData.length; i++) {
+          if (OwnerData[i].id === id) {
+            OwnerData.splice(i, 1, Owner);
             break;
           }
         }
 
-        setUser(UserData);
+        setOwner(OwnerData);
       })
       .catch(function (error) {
         console.log(error);
@@ -93,7 +93,7 @@ const Edit = ({ UserData, selectedUser, setUser, setIsEditingUser }) => {
     Swal.fire({
       icon: "success",
       title: "Updated!",
-      text: `${User.firstName} ${User.lastName}'s data has been updated.`,
+      text: `${Owner.firstName} ${Owner.lastName}'s data has been updated.`,
       showConfirmButton: false,
       timer: 1500,
     });
@@ -102,7 +102,7 @@ const Edit = ({ UserData, selectedUser, setUser, setIsEditingUser }) => {
   return (
 
     <div className="small-container">
-      <form onSubmit={handleUpdateUser}>
+      <form onSubmit={handleUpdateOwner}>
         <h3>Edit User</h3>
         <label htmlFor="firstName">firstName</label>
         <input
@@ -283,7 +283,7 @@ const Edit = ({ UserData, selectedUser, setUser, setIsEditingUser }) => {
             className="muted-button"
             type="button"
             value="Cancel"
-            onClick={() => setIsEditingUser(false)}
+            onClick={() => setIsEditingOwner(false)}
           />
         </div>
       </form>

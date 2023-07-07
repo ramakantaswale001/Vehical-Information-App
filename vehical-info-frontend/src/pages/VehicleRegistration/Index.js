@@ -10,15 +10,15 @@ import List from "./List";
 import Add from "./Add";
 
 const Index = () => {
-  const [UserData, setUser] = useState();
-  const [selectedUser, setSelectedUser] = useState(null);
-  const [isAddingUser, setIsAddingUser] = useState(false);
-  const [isEditingUser, setIsEditingUser] = useState(false);
+  const [VehicleData, setVehicle] = useState();
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
+  const [isAddingVehicle, setIsAddingVehicle] = useState(false);
+  const [isEditingVehicle, setIsEditingVehicle] = useState(false);
   
   useEffect(()=>{
-    let getUser = "http://localhost:5000/user/get";
+    let getVehicle = "http://localhost:5000/Vehicle/get";
     axios
-      .get(getUser,
+      .get(getVehicle,
         {
           headers: {
               token: localStorage.getItem('token')
@@ -28,24 +28,24 @@ const Index = () => {
         //console.log(response);
         const data = response.data
         console.log('---------23-----',data) 
-        setUser(data) 
+        setVehicle(data) 
       })
       .catch(function (error) {
         console.log(error);
       });
   },[]);
 
-  const handleEditUser = (id) => {
-    console.log("----editUser-id--", id);
-    const [singleUser] = UserData.filter((singleUser) => singleUser.id === id);
-    console.log("----singleUser---", singleUser);
-    setSelectedUser(singleUser);
-    setIsEditingUser(true);
+  const handleEditVehicle = (id) => {
+    console.log("----editVehicle-id--", id);
+    const [singleVehicle] = VehicleData.filter((singleVehicle) => singleVehicle.id === id);
+    console.log("----singleUser---", singleVehicle);
+    setSelectedVehicle(singleVehicle);
+    setIsEditingVehicle(true);
    
 
   };
 
-  const handleDeleteUser = (id) => {
+  const handleDeleteVehicle = (id) => {
     Swal.fire({
       icon: "warning",
       title: "Are you sure you want to delete",
@@ -56,14 +56,14 @@ const Index = () => {
     }).then((result) => {
       if (result.value){
       
-        let deleteUserApi =  `http://localhost:5000/user/delete/${id}`;
-        axios.delete(deleteUserApi, {
+        let deleteVehicleApi =  `http://localhost:5000/vehicle/delete/${id}`;
+        axios.delete(deleteVehicleApi, {
                 headers: {
                     token: localStorage.getItem('token')
                 }
         })
         .then(function (response) {
-             console.log("-----user updated----",response.data);
+             console.log("-----vehicle updated----",response.data);
 
              Swal.fire({
               icon:"success",
@@ -87,32 +87,32 @@ const Index = () => {
     <div className="container-right" style={{marginTop:"10%"}}>
       {/* For List Showing on screen */}
       {/* --Logic-- When adding and editing is not showing show Header and List */}
-      {!isAddingUser && !isEditingUser && (
+      {!isAddingVehicle && !isEditingVehicle && (
         <>
-          <Header setIsAddingUser={setIsAddingUser} />
+          <Header setIsAddingVehicle={setIsAddingVehicle} />
           <List
-            UserData={UserData}
-            handleEditUser={handleEditUser}
-            handleDeleteUser={handleDeleteUser}
+            VehicleData={VehicleData}
+            handleEditVehicle={handleEditVehicle}
+            handleDeleteVehicle={handleDeleteVehicle}
           />
         </>
       )}
       {/* For Adding  */}
-      {isAddingUser && (
+      {isAddingVehicle && (
         <Add
-          UserData={UserData}
-          setUser={setUser}
-          setIsAddingUser={setIsAddingUser}
+          VehicleData={VehicleData}
+          setVehicle={setVehicle}
+          setIsAddingVehicle={setIsAddingVehicle}
         />
       )}
 
       {/* For Editing page initially false */}
-      {isEditingUser && (
+      {isEditingVehicle && (
         <Edit
-          UserData={UserData}
-          selectedUser={selectedUser}
-          setUser={setUser}
-          setIsEditingUser={setIsEditingUser}
+          VehicleData={VehicleData}
+          selectedVehicle={selectedVehicle}
+          setVehicle={setVehicle}
+          setIsEditingVehicle={setIsEditingVehicle}
         />
       )}
     </div>

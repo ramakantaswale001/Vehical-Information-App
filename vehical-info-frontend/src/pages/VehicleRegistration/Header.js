@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Header = ({setIsAddingUser}) => {
+const Header = ({setIsAddingVehicle}) => {
   return (
     <header>
-      <h3>User Registration</h3>
+      <h3>Vehicle Registration</h3>
       <div style={{marginTop:'30px',marginBottom:"11px"   }}>
-        <button onClick={() => setIsAddingUser(true)} className='square-button'>Add User</button>
+        <button onClick={() => setIsAddingVehicle(true)} className='square-button'>Add Vehicle</button>
       </div>
     </header>
   )

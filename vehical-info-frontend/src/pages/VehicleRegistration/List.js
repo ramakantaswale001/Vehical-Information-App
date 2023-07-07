@@ -1,11 +1,11 @@
 import { useState, React, useEffect } from 'react'
 
 const List = (props) => {
-  const [UserDataList, setUser] = useState();
+  const [VehicleDataList, setVehicle] = useState();
 
   useEffect(()=>{
-    setUser(props.UserData);
-    console.log("----Userdata----",props.UserData);
+    setVehicle(props.UserData);
+    console.log("----Vehicledata----",props.VehicleData);
   },[]);
   
   return (
@@ -14,33 +14,33 @@ const List = (props) => {
       <thead>
         <tr>
           <th>Id</th>
-          <th> First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Phone No</th>
-          <th>Address</th>
-          <th> Pin Code</th>
-          <th>Photo</th>
+          <th>Vehicle Type Id</th>
+          <th>Seating Capacity</th>
+          <th>Vehicle Image Id</th>
+          <th>Type Of Vehicle</th>
+          <th>Rate Per Km</th>
+          <th>Rent Amount</th>
+          <th>Owner Id</th>
           <th colSpan={2} className="text-center">
             Actions
           </th>
         </tr>
       </thead>
       <tbody>
-        {UserDataList ? (
-          UserDataList.map((data, i) => (
+        {VehicleDataList ? (
+          VehicleDataList.map((data, i) => (
             <tr key={data.id}>
               <td>{i + 1}</td>
-              <td>{data.firstName}</td>
-              <td>{data.lastName}</td>
-              <td>{data.email}</td>
-              <td>{data.phone_no}</td>
-              <td>{data.address}</td>
-              <td>{data.pin_code}</td>
-              <td>{data.photo}</td>
+              <td>{data.vehicle_type_id}</td>
+              <td>{data.seating_capacity}</td>
+              <td>{data.vehicle_image_id}</td>
+              <td>{data.type_of_vehicle}</td>
+              <td>{data.rate_per_km}</td>
+              <td>{data.rent_amount}</td>
+              <td>{data.owner_id}</td>
               <td className="text-right">
                 <button
-                  onClick={() => props.handleEditUser(data.id)}
+                  onClick={() => props.handleEditVehicle(data.id)}
                   className="button muted-button"
                 >
                   Edit
@@ -48,7 +48,7 @@ const List = (props) => {
               </td>
               <td className="text-left">
                 <button
-                  onClick={() => props.handleDeleteUser(data.id)}
+                  onClick={() => props.handleDeleteVehicle(data.id)}
                   className="button muted-button"
                 >
                   Delete
@@ -58,7 +58,7 @@ const List = (props) => {
           ))
         ) : (
           <tr>
-            <td colSpan={7}><h1>No User</h1></td>
+            <td colSpan={7}><h1>No Vehicle</h1></td>
           </tr>
         )}
       </tbody>
