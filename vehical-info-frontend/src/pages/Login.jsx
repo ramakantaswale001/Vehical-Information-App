@@ -14,7 +14,7 @@ const Login = () => {
         event.preventDefault();
        
 
-        let loginApi = `http://localhost:5050/user/login`;
+        let loginApi = `http://localhost:5000/user/login`;
     
         axios.post(loginApi, {
           email: userEmail.current.value,

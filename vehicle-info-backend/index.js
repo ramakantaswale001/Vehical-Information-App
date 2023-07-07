@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require('cors')
 
-const port = 5050;
+const port = 5000;
 const bodyParser = require("body-parser");
 
 const ownerRouter = require("./Routers/owner_router");

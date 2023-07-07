@@ -39,23 +39,6 @@ const Dashboard = () => {
           <SingleCard item={distanceObj} />
         </div>
 
-        {/* <div className="statics">
-          <div className="stats">
-            <h3 className="stats__title">Miles Statistics</h3>
-            <MileChart />
-          </div>
-
-          <div className="stats">
-            <h3 className="stats__title">Car Statistics</h3>
-            <CarStatsChart />
-          </div>
-        </div> */}
-
-        <div className="recommend__cars-wrapper">
-          {recommendCarsData.map((item) => (
-            <RecommendCarCard item={item} key={item.id} />
-          ))}
-        </div>
       </div>
     </div>
   );

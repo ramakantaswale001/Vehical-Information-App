@@ -8,7 +8,7 @@ import Login from "../pages/Login";
 import Owner from "../pages/Owner";
 import Type_of_Business from "../pages/Type_of_Business";
 import VehicleImage from "../pages/VehicleImage";
-import UserRegistration from "../pages/UserRegistration";
+import UserRegistration from "../pages/UserRegistration/Index";
 import VehicleRegistration from "../pages/VehicleRegistration"
 import VehicleType from "../pages/VehicleType";
 
