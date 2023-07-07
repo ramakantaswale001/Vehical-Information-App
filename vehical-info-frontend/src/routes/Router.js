@@ -5,11 +5,11 @@ import Dashboard from "../pages/Dashboard";
 import VehicleImages from "../pages/VehicleImages";
 import VehicleDetails from "../pages/VehicleDetails";
 import Login from "../pages/Login";
-import Owner from "../pages/Owner";
+import Owner from "../pages/OwnerRegistration/Index";
 import Type_of_Business from "../pages/Type_of_Business";
 import VehicleImage from "../pages/VehicleImage";
 import UserRegistration from "../pages/UserRegistration/Index";
-import VehicleRegistration from "../pages/VehicleRegistration"
+import VehicleRegistration from "../pages/VehicleRegistration/Index"
 import VehicleType from "../pages/VehicleType";
 
 

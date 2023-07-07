@@ -4,36 +4,36 @@ const navLinks = [
     icon: "ri-apps-2-line",
     display: "Dashboard",
   },
-  {
-    path: "/vehicle-images",
-    icon: "ri-image-fill",
-    display: "Vehicles Images",
-  },
-  {
-    path: "/vehicle-details",
-    icon: "ri-truck-line",
-    display: "Vehicle Details",
-  },
+  // {
+  //   path: "/vehicle-images",
+  //   icon: "ri-image-fill",
+  //   display: "Vehicles Images",
+  // },
+  // {
+  //   path: "/vehicle-details",
+  //   icon: "ri-truck-line",
+  //   display: "Vehicle Details",
+  // },
   // {
   //   path: "/registration",
   //   icon: "ri-draft-fill",
   //   display: "Registration",
   // },
-  {
-    path: "/type_of_business",
-    icon: "",
-    display: "Type Of Business",
-  },
-  {
-    path: "/vehicle_image",
-    icon: "",
-    display: "Vehicle Image",
-  },
-  {
-    path: "/vehicle_type",
-    icon: "",
-    display: "VehicleType",
-  },
+  // {
+  //   path: "/type_of_business",
+  //   icon: "",
+  //   display: "Type Of Business",
+  // },
+  // {
+  //   path: "/vehicle_image",
+  //   icon: "",
+  //   display: "Vehicle Image",
+  // },
+  // {
+  //   path: "/vehicle_type",
+  //   icon: "",
+  //   display: "VehicleType",
+  // },
   {
     path: "/vehicle-registration",
     icon: "ri-car-fill",
@@ -53,7 +53,7 @@ const navLinks = [
   {
     path: "/owner",
     icon: "ri-user-add-fill",
-    display: "Owner",
+    display: "Owner Registration",
   },
   {
     path: "/login",
