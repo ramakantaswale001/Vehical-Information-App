@@ -80,7 +80,7 @@ const Add = ({ OwnerData, setOwner, setIsAddingOwner }) => {
       });
 
     UserData.push(newUser);
-    setOwner(UserData);
+    setOwner(User=Data);
     setIsAddingOwner(false);
 
 
