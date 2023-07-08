@@ -46,7 +46,7 @@ const Add = ({VehicleData,setVehicle,setIsAddingVehicle}) => {
           owner_id
        }
 
-        let addVehicle = "http://localhost:5000/Vehicle/addvehicle";
+        let addVehicle = "http://localhost:5000/vehicleRegistration/add";
         
         axios
             .post(addVehicle, newVehicle,

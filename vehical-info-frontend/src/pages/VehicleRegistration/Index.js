@@ -16,7 +16,7 @@ const Index = () => {
   const [isEditingVehicle, setIsEditingVehicle] = useState(false);
   
   useEffect(()=>{
-    let getVehicle = "http://localhost:5000/Vehicle/get";
+    let getVehicle = "http://localhost:5000/vehicleRegistration/get";
     axios
       .get(getVehicle,
         {
@@ -56,7 +56,7 @@ const Index = () => {
     }).then((result) => {
       if (result.value){
       
-        let deleteVehicleApi =  `http://localhost:5000/vehicle/delete/${id}`;
+        let deleteVehicleApi =  `http://localhost:5000/vehicleRegistration/delete/${id}`;
         axios.delete(deleteVehicleApi, {
                 headers: {
                     token: localStorage.getItem('token')

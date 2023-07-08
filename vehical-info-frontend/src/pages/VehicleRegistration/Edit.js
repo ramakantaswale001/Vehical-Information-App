@@ -39,7 +39,7 @@ console.log("---updateid---",id)
       owner_id
     };
 
-    let updateVehicle = `http://localhost:5000/vehicle/update/${id}`;
+    let updateVehicle = `http://localhost:5000/vehicleRegistration/update/${id}`;
 
     axios
       .put(updateVehicle, Vehicle,
@@ -70,7 +70,7 @@ console.log("---updateid---",id)
     Swal.fire({
       icon: "success",
       title: "Updated!",
-      text: `${Vehicle.firstName} ${Vehicle.lastName}'s data has been updated.`,
+      text: `${Vehicle.vehicle_type_id} ${Vehicle.seating_capacity}'s data has been updated.`,
       showConfirmButton: false,
       timer: 1500,
     });
@@ -84,13 +84,13 @@ console.log("---updateid---",id)
         <label htmlFor="vehicle_type_id">Vehicle Type Id</label>
         <input
           id="vehicle_type_id"
-          type="text"
+          type="number"
           name="vehicle_type_id"
           value={vehicle_type_id}
           onChange={(e) => setVehicle_type_id(e.target.value)}
         />
 
-        <label htmlFor="Seating_capacity">Seating Capacity</label>
+        <label htmlFor="seating_capacity">Seating Capacity</label>
         <input
           id="seating_capacity"
           type="number"
@@ -129,7 +129,7 @@ console.log("---updateid---",id)
          <label htmlFor="rent_amount">Rent Amount</label>
         <input
           id="rent_amount"
-          type="text"
+          type="number"
           name="rent_amount"
           value={rent_amount}
           onChange={(e) => setRent_amount(e.target.value)}

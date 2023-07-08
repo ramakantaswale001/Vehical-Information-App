@@ -4,7 +4,7 @@ const List = (props) => {
   const [VehicleDataList, setVehicle] = useState();
 
   useEffect(()=>{
-    setVehicle(props.UserData);
+    setVehicle(props.VehicleData);
     console.log("----Vehicledata----",props.VehicleData);
   },[]);
   
@@ -13,7 +13,7 @@ const List = (props) => {
     <table className="striped-table">
       <thead>
         <tr>
-          <th>Id</th>
+          <th>No</th>
           <th>Vehicle Type Id</th>
           <th>Seating Capacity</th>
           <th>Vehicle Image Id</th>
